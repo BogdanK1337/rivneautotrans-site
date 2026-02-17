@@ -7,15 +7,16 @@ document.querySelector('.scroll-indicator').addEventListener('click', function()
 document.addEventListener('DOMContentLoaded', function() {
 
     const modal = document.getElementById('modal');
-    const openBtn = document.querySelector('.cta-btn');
+    const openBtns = document.querySelectorAll('.cta-btn, .header-btn');
     const closeBtn = document.querySelector('.close-btn');
     const sendBtn = document.getElementById('sendBtn');
 
-    if (openBtn) {
-        openBtn.addEventListener('click', () => {
+    openBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
             modal.classList.add('active');
         });
-    }
+    });
+
 
     if (closeBtn) {
         closeBtn.addEventListener('click', () => {
@@ -78,3 +79,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 });
+
