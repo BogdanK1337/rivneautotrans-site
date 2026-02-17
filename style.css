@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #f8fafc;
+    color: #1e293b;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+header {
+    background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
+                url('https://images.unsplash.com/photo-1501706362039-c6e8096f5b15?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    padding: 140px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #0f172a;
+}
+
+header p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: auto;
+    color: #334155;
+}
+
+.cta-btn {
+    margin-top: 30px;
+    padding: 14px 35px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    background: #1d4ed8;
+}
+
+.services {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.service-list {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    padding: 40px 20px;
+    width: 23%;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.contacts {
+    background: #e2e8f0;
+    padding: 70px 0;
+    text-align: center;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0); /* можеш зробити темніше */
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.top-bar {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    z-index: 3;
+}
+
+.logo {
+    width: 250px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+
+
+.hero-title {
+    font-size: 72px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;  
+    transform: translateX(-50%);
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 17px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.scroll-indicator:hover {
+    opacity: 0.7;
+}
+
+.mouse {
+    width: 22px;
+    height: 35px;
+    border: 2px solid rgb(101, 101, 101);
+    border-radius: 12px;
+    margin: 8px auto 0;
+    position: relative;
+}
+
+.mouse::after {
+    content: "";
+    width: 4px;
+    height: 6px;
+    background: rgb(0, 0, 0);
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    animation: scrollAnim 1.5s infinite;
+}
+
+@keyframes scrollAnim {
+    0% { opacity: 1; top: 6px; }
+    100% { opacity: 0; top: 18px; }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    position: relative;
+    background: white;
+    padding: 40px;
+    width: 400px;
+    border-radius: 14px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+    animation: modalFade 0.3s ease;
+    text-align: center;
+}
+
+@keyframes modalFade {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #1e293b;
+}
+
+/* Інпути */
+.modal-content input {
+    width: 100%;
+    padding: 14px 16px;
+    margin: 10px 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.modal-content input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+}
+
+/* Кнопка */
+#sendBtn {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    background: #1e3a8a;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#sendBtn:hover {
+    background: #1d4ed8;
+}
+
+/* Хрестик */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #64748b;
+}
+
+.close-btn:hover {
+    color: #1e293b;
+}
+

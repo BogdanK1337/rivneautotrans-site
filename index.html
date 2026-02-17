@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Логістична компанія</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+
+    <video autoplay muted loop playsinline class="video-bg">
+        <source src="video/відео_стоянка.mp4" type="video/mp4">
+    </video>
+
+    <div class="overlay"></div>
+
+    <div class="top-bar">
+        <img src="images/photo_2026-02-17_17-40-34-removebg-preview.png" alt="РівнеАвтоТранс" class="logo">
+    </div>
+
+    <div class="hero-content">
+        <h1 class="hero-title">РівнеАвтоТранс</h1>
+        <p>Міжнародні та внутрішні перевезення по Україні, Європі, Балканах та Близькому Сходу</p>
+        <button class="cta-btn">Отримати розрахунок</button>
+    </div>
+
+    <div class="scroll-indicator">
+        <section id="contacts" class="services">
+        <span>Гортай вниз</span>
+        <div class="mouse"></div>
+    </div>
+
+</header>
+
+<section class="services">
+    <div class="container">
+        <h2>Наші послуги</h2>
+        <div class="service-list">
+            <div class="card">Міжнародні перевезення</div>
+            <div class="card">Митне оформлення</div>
+            <div class="card">Експрес-доставка</div>
+        </div>
+    </div>
+</section>
+
+<section id="contacts" class="contacts">
+    <div class="container">
+        <h2>Контакти</h2>
+        <p>Телефон: +38 096 123 45 67</p>
+        <p>Email: info@logistics.ua</p>
+        <p>Адрес: Рівне</p>
+    </div>
+</section>
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Отримати розрахунок</h2>
+        
+        <input type="text" id="name" placeholder="Ваше ім’я">
+        <input type="tel" id="phone" placeholder="Ваш телефон">
+        
+        <button id="sendBtn">Відправити</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
