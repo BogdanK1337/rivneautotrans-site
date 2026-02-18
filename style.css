@@ -312,3 +312,66 @@ html {
 .header-btn:hover {
     background: #1d4ed8;
 }
+
+@media (max-width: 1024px) {
+
+    .hero-title {
+        font-size: 48px;
+    }
+
+    .service-list {
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .hero-title {
+        font-size: 36px;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+
+    .top-bar {
+        left: 20px;
+        right: 20px;
+    }
+
+    .logo {
+        width: 180px;
+    }
+
+    .header-btn {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    .service-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .modal-content {
+        width: 90%;
+        padding: 25px;
+    }
+}
+
+@media (max-height: 500px) {
+    .hero {
+        height: auto;
+        padding: 80px 0;
+    }
+}
