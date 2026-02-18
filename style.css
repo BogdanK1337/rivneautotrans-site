@@ -329,6 +329,13 @@ html {
 }
 
 @media (max-width: 768px) {
+        .about-features {
+        grid-template-columns: 1fr;
+    }
+
+    .about p {
+        padding: 0 20px;
+    }
 
     .hero-title {
         font-size: 36px;
@@ -374,4 +381,55 @@ html {
         height: auto;
         padding: 80px 0;
     }
+}
+
+.about {
+    padding: 100px 0;
+    background: #f8fafc;
+}
+
+.about h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.about-intro {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    text-align: center;
+    line-height: 1.6;
+    color: #475569;
+}
+
+.about-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    max-width: 700px;
+    margin: 30px auto;
+}
+
+.about-features div {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.about-services {
+    max-width: 700px;
+    margin: 20px auto;
+    padding-left: 20px;
+}
+
+.about-services li {
+    margin-bottom: 10px;
 }
