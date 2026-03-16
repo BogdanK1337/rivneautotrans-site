@@ -1,167 +1,466 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вантажні перевезення по Україні та Європі | Міжнародна логістика і доставка</title>
-    <meta name="description" content="Вантажні автоперевезення по Україні, Європі, Балканах і Близькому Сходу: міжнародна логістика, рефрижераторні перевезення, тентовані фури, експрес-доставка, митний супровід.">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta name="keywords" content="вантажні перевезення, міжнародні перевезення, логістична компанія, автоперевезення Україна, доставка вантажів Європа, рефрижераторні перевезення, тентовані перевезення, митне оформлення, транспортно-експедиційні послуги, експрес-доставка, перевезення 20 тонн, перевезення 25 тонн, збірні вантажі">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="uk_UA">
-    <meta property="og:title" content="Вантажні перевезення по Україні та Європі">
-    <meta property="og:description" content="Надійні міжнародні та внутрішні автоперевезення для бізнесу: від 1 до 25 тонн, FTL/LTL, рефрижератор, митний супровід.">
-    <meta property="og:image" content="images/photo_2026-02-17_17-40-34-removebg-preview.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "TransportationService",
-      "name": "Транспортно-експедиційні послуги",
-      "description": "Міжнародні та внутрішні вантажні перевезення автотранспортом по Україні, Європі, Балканах та Близькому Сходу.",
-      "telephone": "+380961234567",
-      "email": "info@logistics.ua",
-      "areaServed": ["Україна", "Європа", "Балкани", "Близький Схід"],
-      "serviceType": [
-        "Вантажні автоперевезення",
-        "Рефрижераторні перевезення",
-        "Експрес-доставка",
-        "Митний супровід"
-      ]
+:root {
+    --bg: #f2f5fa;
+    --text: #162033;
+    --muted: #4d5a73;
+    --primary: #0f5ea8;
+    --primary-dark: #0a437b;
+    --accent: #1ea7d8;
+    --card: #ffffff;
+    --line: rgba(16, 52, 86, 0.15);
+    --shadow: 0 20px 50px rgba(13, 38, 62, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Manrope", "Segoe UI", sans-serif;
+    background:
+        radial-gradient(circle at 12% 10%, rgba(30, 167, 216, 0.14), transparent 36%),
+        radial-gradient(circle at 88% 90%, rgba(15, 94, 168, 0.14), transparent 34%),
+        var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.container {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+}
+
+.hero {
+    position: relative;
+    min-height: 100svh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 0 90px;
+}
+
+.video-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    filter: saturate(1.15) contrast(1.05) brightness(0.8);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(115deg, rgba(5, 22, 42, 0.82) 10%, rgba(9, 56, 95, 0.55) 48%, rgba(7, 28, 48, 0.76) 100%),
+        radial-gradient(circle at 20% 18%, rgba(41, 183, 230, 0.22), transparent 38%);
+}
+
+.top-bar {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    right: 40px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: clamp(170px, 18vw, 260px);
+    filter: drop-shadow(0 8px 20px rgba(6, 17, 30, 0.4));
+}
+
+.header-btn {
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    background: rgba(13, 80, 140, 0.46);
+    color: #fff;
+    border-radius: 999px;
+    padding: 11px 24px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+    backdrop-filter: blur(8px);
+}
+
+.header-btn:hover {
+    transform: translateY(-2px);
+    background: rgba(20, 120, 195, 0.58);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    width: min(900px, 92%);
+    padding: 34px 30px;
+    border-radius: 26px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+    backdrop-filter: blur(8px);
+    box-shadow: 0 24px 55px rgba(7, 18, 35, 0.34);
+    animation: heroUp 0.8s ease forwards;
+}
+
+.hero-title {
+    font-family: "Archivo Black", "Manrope", sans-serif;
+    font-size: clamp(2.4rem, 8vw, 5.4rem);
+    line-height: 1;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+    text-shadow: 0 10px 26px rgba(0, 0, 0, 0.44);
+}
+
+.hero-content p {
+    max-width: 760px;
+    margin: 0 auto;
+    font-size: clamp(1rem, 2.2vw, 1.28rem);
+    color: rgba(240, 247, 255, 0.95);
+}
+
+.cta-btn {
+    margin-top: 30px;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 34px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #fff;
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 12px 30px rgba(6, 70, 124, 0.45);
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 36px rgba(7, 90, 160, 0.5);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.scroll-indicator:hover {
+    opacity: 0.8;
+}
+
+.mouse {
+    width: 24px;
+    height: 38px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    margin: 10px auto 0;
+    position: relative;
+}
+
+.mouse::after {
+    content: "";
+    width: 4px;
+    height: 7px;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 7px;
+    border-radius: 5px;
+    animation: scrollAnim 1.4s infinite;
+}
+
+main {
+    padding: 24px 0 0;
+}
+
+.about,
+.services,
+.contacts {
+    padding: clamp(64px, 7vw, 95px) 0;
+}
+
+.about {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.76) 0%, rgba(245, 249, 255, 0.86) 100%);
+}
+
+.about h2,
+.services h2,
+.contacts h2 {
+    text-align: center;
+    font-size: clamp(1.7rem, 3.8vw, 2.2rem);
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+.about-intro {
+    max-width: 860px;
+    margin: 0 auto 14px;
+    text-align: center;
+    font-size: 1.07rem;
+    font-weight: 700;
+}
+
+.about p,
+.services p {
+    max-width: 920px;
+    margin: 0 auto 16px;
+    text-align: center;
+    color: var(--muted);
+}
+
+.about-features {
+    max-width: 900px;
+    margin: 36px auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 14px;
+}
+
+.about-features div {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 14px 16px;
+    box-shadow: 0 10px 24px rgba(12, 41, 67, 0.08);
+}
+
+.about h3 {
+    margin: 20px 0 14px;
+    text-align: center;
+    font-size: 1.35rem;
+}
+
+.about-services {
+    max-width: 760px;
+    margin: 0 auto;
+    padding-left: 24px;
+}
+
+.about-services li {
+    margin-bottom: 9px;
+    color: #233147;
+}
+
+.services {
+    background: #fff;
+}
+
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.card {
+    background:
+        linear-gradient(#fff, #fff) padding-box,
+        linear-gradient(130deg, rgba(30, 167, 216, 0.35), rgba(15, 94, 168, 0.2)) border-box;
+    border: 1px solid transparent;
+    border-radius: 18px;
+    padding: 24px 20px;
+    text-align: center;
+    font-weight: 700;
+    color: #1b2e45;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 52px rgba(11, 35, 60, 0.18);
+}
+
+.contacts {
+    background:
+        linear-gradient(125deg, rgba(10, 38, 70, 0.95), rgba(16, 81, 133, 0.92)),
+        radial-gradient(circle at 10% 20%, rgba(30, 167, 216, 0.25), transparent 42%);
+    color: #fff;
+}
+
+.contacts .container {
+    max-width: 760px;
+    border-radius: 20px;
+    padding: 26px 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.2);
+}
+
+.contacts p {
+    text-align: center;
+    margin-bottom: 8px;
+    color: rgba(247, 251, 255, 0.95);
+    font-size: 1.06rem;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(5, 19, 36, 0.56);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    width: min(410px, 92%);
+    background: #fff;
+    border-radius: 16px;
+    padding: 34px 26px 26px;
+    box-shadow: 0 26px 52px rgba(8, 25, 44, 0.34);
+    animation: modalFade 0.3s ease;
+    text-align: center;
+    position: relative;
+}
+
+.modal-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 13px 14px;
+    margin: 8px 0;
+    border: 1px solid #c9d7ea;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.modal-content input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(15, 94, 168, 0.17);
+}
+
+#sendBtn {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+}
+
+#sendBtn:hover {
+    filter: brightness(1.05);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #6b7c98;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #2b3c57;
+}
+
+@keyframes scrollAnim {
+    0% {
+        opacity: 1;
+        top: 7px;
     }
-    </script>
-</head>
-<body>
+    100% {
+        opacity: 0;
+        top: 20px;
+    }
+}
 
-<header class="hero">
+@keyframes heroUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-    <video autoplay muted loop playsinline class="video-bg">
-        <source src="video/Відео_без_звуку_за_запитом.mp4" type="video/mp4">
-        <source src="video/відео_стоянка.mp4" type="video/mp4">
-    </video>
+@keyframes modalFade {
+    from {
+        opacity: 0;
+        transform: translateY(-18px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
 
-    <div class="overlay"></div>
+@media (max-width: 980px) {
+    .service-list {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+    }
 
-    <div class="top-bar">
-        <img src="images/photo_2026-02-17_17-40-34-removebg-preview.png" 
-            alt="Логотип транспортно-логістичної компанії" 
-            class="logo">       
+    .hero-content {
+        width: min(840px, 94%);
+    }
+}
 
-        <button class="header-btn" type="button">Зв'яжіться з нами</button>
-    </div>
+@media (max-width: 760px) {
+    .top-bar {
+        top: 16px;
+        left: 16px;
+        right: 16px;
+    }
 
+    .header-btn {
+        padding: 9px 15px;
+        font-size: 12px;
+    }
 
-    <div class="hero-content">
-        <h1 class="hero-title">РівнеАвтоТранс</h1>
-        <p>Логістична компанія для внутрішніх і міжнародних перевезень по Україні, Європі, Балканах та Близькому Сходу</p>
-        <button class="cta-btn" type="button">Отримати розрахунок</button>
-    </div>
+    .hero {
+        padding-top: 110px;
+    }
 
-    <div class="scroll-indicator">
-        <span>Гортай вниз</span>
-        <div class="mouse"></div>
-    </div>
+    .hero-content {
+        padding: 26px 18px;
+        border-radius: 18px;
+    }
 
-</header>
+    .about-features {
+        grid-template-columns: 1fr;
+    }
 
-<main>
-<section class="about">
-    <div class="container">
+    .service-list {
+        grid-template-columns: 1fr;
+    }
 
-        <h2>Про компанію</h2>
-
-        <p class="about-intro">
-            ТОВ «РівнеАвтоТранс» — транспортно-експедиційна компанія,
-            що спеціалізується на організації автовантажоперевезень
-            по всій території України та за її межами.
-        </p>
-
-        <p>
-            Підприємство зарекомендувало себе як надійний та стабільний
-            партнер на ринку вантажних перевезень. Наша мета —
-            забезпечити дбайливу та своєчасну доставку вантажу.
-        </p>
-
-        <div class="about-features">
-            <div>✔ Повний супровід перевезення</div>
-            <div>✔ Професійна команда</div>
-            <div>✔ Контроль якості на всіх етапах</div>
-            <div>✔ Індивідуальний підхід до клієнта</div>
-        </div>
-
-        <h3>Які вантажі і маршрути обслуговуємо</h3>
-
-        <ul class="about-services">
-            <li>Перевезення невеликих вантажів від 1 т або 10 м³</li>
-            <li>Перевезення до 25 т стандартними тентованими автопоїздами (86–92 м³)</li>
-            <li>Рефрижераторні перевезення з температурним режимом</li>
-            <li>Доставка збірних вантажів (LTL) і повними машинами (FTL)</li>
-            <li>Логістика для виробництва, дистрибуції, ритейлу та e-commerce</li>
-        </ul>
-
-    </div>
-</section>
-
-<section class="services">
-    <div class="container">
-        <h2>Послуги вантажної логістики</h2>
-        <div class="service-list">
-            <div class="card">Міжнародні перевезення</div>
-            <div class="card">Митне оформлення</div>
-            <div class="card">Експрес-доставка</div>
-            <div class="card">Автоперевезення по Україні</div>
-            <div class="card">Рефрижераторні перевезення</div>
-            <div class="card">Перевезення тентованими фурами</div>
-        </div>
-    </div>
-</section>
-
-<section class="services">
-    <div class="container">
-        <h2>Популярні запити клієнтів</h2>
-        <p>Ми працюємо з запитами: перевезення вантажів Україна, доставка вантажів Європа, міжнародні автомобільні перевезення, логістичні послуги для бізнесу, термінова доставка вантажу, перевезення рефрижератором, митно-брокерський супровід, перевезення 20-25 тонн.</p>
-    </div>
-</section>
-
-<section class="about">
-    <div class="container">
-        <h2>FAQ про перевезення вантажів</h2>
-        <h3>Які напрямки міжнародної доставки доступні?</h3>
-        <p>Виконуємо автоперевезення між Україною та країнами Європи, Балканами і Близьким Сходом з плануванням оптимального маршруту.</p>
-        <h3>Чи надаєте митний супровід?</h3>
-        <p>Так, допомагаємо з підготовкою документів, проходженням митних процедур і координацією на всіх етапах перевезення.</p>
-        <h3>Які типи транспорту доступні?</h3>
-        <p>Доступні тентовані автопоїзди, рефрижератори та транспорт для експрес-доставки вантажів різного об'єму і ваги.</p>
-    </div>
-</section>
-
-<section id="contacts" class="contacts">
-    <div class="container">
-        <h2>Контакти</h2>
-        <p>Телефон: +38 067 165 93 60</p>
-        <p>Email: rivneavtotrans@gmail.com</p>
-        <p>Адрес: Україна, м.Рівне, вул.Д. Галицького 9А, офіс 123</p>
-    </div>
-</section>
-</main>
-
-<div class="modal" id="modal">
-    <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <h2>Отримати розрахунок</h2>
-        
-        <input type="text" id="name" placeholder="Ваше ім’я">
-        <input type="tel" id="phone" placeholder="Ваш телефон">
-        
-        <button id="sendBtn">Відправити</button>
-    </div>
-</div>
-
-<script src="script.js"></script>
-
-</body>
-</html>
+    .about-services {
+        padding-left: 18px;
+    }
+}
